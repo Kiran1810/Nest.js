@@ -5,6 +5,7 @@ WORKDIR /app
 # copy dependency files
 COPY package.json ./
 COPY package-lock.json ./
+COPY prisma ./prisma/ 
 
 RUN npm install
 
