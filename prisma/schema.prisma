@@ -14,3 +14,11 @@ model location {
   id    Int     @default(autoincrement()) @id
   name  String  @db.VarChar(255)
 }
+
+model filter {
+  id Int @default(autoincrement()) @id
+  name String @db.VarChar(255)
+  open Boolean
+  type String @db.VarChar(255)
+  options Json[]
+}
