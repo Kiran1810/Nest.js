@@ -34,6 +34,6 @@ async function bootstrap() {
 
   const SERVER_PORT = process.env.SERVER_PORT
 
-  await app.listen(SERVER_PORT ? parseInt(SERVER_PORT): 3000);
+  await app.listen(SERVER_PORT ? parseInt(SERVER_PORT): 3000, "0.0.0.0");
 }
 bootstrap();
