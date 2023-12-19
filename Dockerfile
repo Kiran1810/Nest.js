@@ -21,7 +21,7 @@ COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/package.json ./
 COPY --from=builder /app/package-lock.json ./
 COPY --from=builder /app/dist ./dist
-COPY prisma ./prisma/
+COPY --from=builder /app/prisma ./prisma
 
 ARG SERVER_RELEASE_VERSION
 ENV SERVER_RELEASE_VERSION=${SERVER_RELEASE_VERSION}
