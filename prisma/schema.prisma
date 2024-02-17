@@ -22,3 +22,16 @@ model filter {
   type String @db.VarChar(255)
   options Json[]
 }
+model Person {
+ 
+  id        Int      @id @default(autoincrement())
+  name      String
+  contact   String
+  experience String
+  skills    String[]
+  specializations String[]
+  references String
+  availability String
+  personalityTraits String
+  additionalInformation String
+}
