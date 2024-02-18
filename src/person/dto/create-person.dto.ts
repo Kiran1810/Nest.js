@@ -6,11 +6,13 @@ enum FilterType {
     'checkbox' = 'checkbox',
     'radio' = 'radio'
 }
+
 export class CreatePersonDto{
 
 @ApiProperty()
 @IsInt()
   id: number 
+
   @ApiProperty()  
   @IsString()  
   name: string
@@ -25,11 +27,13 @@ export class CreatePersonDto{
 
   @ApiProperty()
   @IsArray()
+  @ArrayMinSize(1)
   @IsString({each:true})
   readonly skills: string[]
 
   @ApiProperty()
   @IsArray()
+  @ArrayMinSize(1)
   @IsString({each:true})
   readonly specializations: string[]
 
