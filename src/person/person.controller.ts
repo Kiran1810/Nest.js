@@ -13,8 +13,7 @@ export class PersonController {
             const createdPerson = await this.personService.create(createPersonDto);
             return createdPerson;
         } catch (error) {
-            // Handle any errors that occurred during the creation process
-            throw error; // You might want to customize the error handling here
+            throw error;
         }
     }
 
@@ -24,12 +23,17 @@ export class PersonController {
             const person = await this.personService.findById(Number(id));
             return person;
         } catch (error) {
-            // If PersonService throws a NotFoundException, throw a NotFoundException
+          
             if (error instanceof NotFoundException) {
                 throw error;
             }
-            // Handle other potential errors here
-            throw error; // You might want to customize the error handling here
+            throw error; 
         }
     }
+
+    @Get()
+    findAll(){
+        return this.personService.findAll();
+    }
+
 }
